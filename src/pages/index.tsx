@@ -68,7 +68,7 @@ export default function HomePage() {
                 type='range'
                 value={value}
                 onChange={(e) => setValue(parseInt(e.target.value))}
-                className='fixed top-[50%] h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
+                className='fixed top-10 h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
               />
             </div>
             {/* <p className='mt-2 text-sm text-gray-800'>
