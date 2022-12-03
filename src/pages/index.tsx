@@ -25,7 +25,7 @@ export default function HomePage() {
 
   const handleScroll = () => {
     // setScrollY(window.scrollY);
-    setValue((window.scrollY / 1000) * 100);
+    setValue((window.scrollY / (1000 - 180)) * 100);
   };
 
   React.useEffect(() => {
@@ -43,7 +43,7 @@ export default function HomePage() {
 
       <main className='no-scrollbar bg-black'>
         <section className='no-scrollbar bg-black text-white'>
-          <div className='no-scrollbar layout flex min-h-screen flex-col items-center justify-center text-center'>
+          <div className='no-scrollbar layout flex min-h-[180px] flex-col items-center justify-center text-center'>
             {/* <Vercel className='text-5xl' /> */}
             {/* <h1 className='mt-4 text-white'>
               Next.js + Tailwind CSS + TypeScript Starter
