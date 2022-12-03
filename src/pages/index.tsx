@@ -82,7 +82,7 @@ export default function HomePage() {
               type='range'
               value={value}
               onChange={(e) => setValue(parseInt(e.target.value))}
-              className='fixed top-[25%] h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
+              className='sticky top-[25%] h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
               // style={{
               //   marginTop: scrollY + 100 + 'px',
               // }}
