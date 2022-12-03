@@ -32,14 +32,14 @@ export default function HomePage() {
             {/* <h1 className='mt-4 text-white'>
               Next.js + Tailwind CSS + TypeScript Starter
             </h1> */}
-            <div className='w-full flex-col space-y-3'>
-              <button className='flex-1 rounded-lg border-2 border-white py-2 text-xl'>
+            <div className='flex w-full flex-col space-y-3'>
+              <button className='flex-1 rounded-lg border-2 border-white py-4 text-xl'>
                 Test Button 1
               </button>
-              <button className='flex-1 rounded-lg border-2 border-white py-2 text-xl'>
+              <button className='flex-1 rounded-lg border-2 border-white py-4 text-xl'>
                 Test Button 2
               </button>
-              <button className='flex-1 rounded-lg border-2 border-white py-2 text-xl'>
+              <button className='flex-1 rounded-lg border-2 border-white py-4 text-xl'>
                 Test Button 3
               </button>
             </div>
