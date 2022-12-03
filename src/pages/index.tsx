@@ -20,12 +20,14 @@ import Seo from '@/components/Seo';
 // to customize the default configuration.
 
 export default function HomePage() {
+  const [value, setValue] = React.useState(50);
+
   return (
     <Layout>
       {/* <Seo templateTitle='Home' /> */}
       <Seo />
 
-      <main>
+      <main className='bg-black'>
         <section className='bg-black text-white'>
           <div className='layout flex min-h-screen flex-col items-center justify-center text-center'>
             {/* <Vercel className='text-5xl' /> */}
@@ -33,7 +35,7 @@ export default function HomePage() {
               Next.js + Tailwind CSS + TypeScript Starter
             </h1> */}
             <div className='flex w-full flex-col space-y-3'>
-              <button className='flex-1 rounded-lg border-2 border-white py-4 text-xl'>
+              {/* <button className='flex-1 rounded-lg border-2 border-white py-4 text-xl'>
                 Test Button 1
               </button>
               <button className='flex-1 rounded-lg border-2 border-white py-4 text-xl'>
@@ -41,7 +43,21 @@ export default function HomePage() {
               </button>
               <button className='flex-1 rounded-lg border-2 border-white py-4 text-xl'>
                 Test Button 3
-              </button>
+              </button> */}
+
+              <label
+                htmlFor='default-range'
+                className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
+              >
+                Default range
+              </label>
+              <input
+                id='default-range'
+                type='range'
+                value={value}
+                onChange={(e) => setValue(parseInt(e.target.value))}
+                className='h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
+              />
             </div>
             {/* <p className='mt-2 text-sm text-gray-800'>
               A starter for Next.js, Tailwind CSS, and TypeScript with Absolute
