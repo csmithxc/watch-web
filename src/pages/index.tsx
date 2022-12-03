@@ -53,7 +53,7 @@ export default function HomePage() {
 
       <main className='no-scrollbar bg-black'>
         <section className='no-scrollbar bg-black text-white'>
-          <div className='no-scrollbar layout flex min-h-[180px] flex-col items-center justify-center text-center'>
+          <div className='no-scrollbar layout flex min-h-[286px] flex-col items-center justify-center text-center'>
             {/* <Vercel className='text-5xl' /> */}
             {/* <h1 className='mt-4 text-white'>
               Next.js + Tailwind CSS + TypeScript Starter
