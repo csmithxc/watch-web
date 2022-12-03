@@ -25,10 +25,11 @@ export default function HomePage() {
     height: 0,
     width: 0,
   });
+  const [scrollY, setScrollY] = React.useState(0);
 
   React.useEffect(() => {
     const handleScroll = () => {
-      // setScrollY(window.scrollY);
+      setScrollY(window.scrollY);
       setValue((window.scrollY / (2000 - window?.innerHeight)) * 100);
     };
 
@@ -53,12 +54,13 @@ export default function HomePage() {
 
       <main>
         <section className='bg-black text-white'>
-          <div className='layout h-[2000px]'>
-            {/* <Vercel className='text-5xl' /> */}
-            {/* <h1 className='mt-4 text-white'>
+          <div className='layout h-full overflow-hidden'>
+            <div className='h-[2000px]'>
+              {/* <Vercel className='text-5xl' /> */}
+              {/* <h1 className='mt-4 text-white'>
               Next.js + Tailwind CSS + TypeScript Starter
             </h1> */}
-            {/* <button className='flex-1 rounded-lg border-2 border-white py-4 text-xl'>
+              {/* <button className='flex-1 rounded-lg border-2 border-white py-4 text-xl'>
                 Test Button 1
               </button>
               <button className='flex-1 rounded-lg border-2 border-white py-4 text-xl'>
@@ -68,25 +70,26 @@ export default function HomePage() {
                 Test Button 3
               </button> */}
 
-            {/* <label
+              {/* <label
                 htmlFor='default-range'
                 className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
               >
                 Default range
               </label> */}
-            <div className='mt-10'>
-              {innerDimensions.height} | {innerDimensions.width}
+              <div className='mt-10'>
+                {innerDimensions.height} | {innerDimensions.width}
+              </div>
+              <input
+                id='default-range'
+                type='range'
+                value={value}
+                onChange={(e) => setValue(parseInt(e.target.value))}
+                className='sticky top-[25%] h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
+                style={{
+                  marginTop: scrollY + 0 + 'px',
+                }}
+              />
             </div>
-            <input
-              id='default-range'
-              type='range'
-              value={value}
-              onChange={(e) => setValue(parseInt(e.target.value))}
-              className='sticky top-[25%] h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
-              // style={{
-              //   marginTop: scrollY + 100 + 'px',
-              // }}
-            />
             {/* <p className='mt-2 text-sm text-gray-800'>
               A starter for Next.js, Tailwind CSS, and TypeScript with Absolute
               Import, Seo, Link component, pre-configured with Husky{' '}
