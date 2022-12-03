@@ -22,19 +22,31 @@ import Seo from '@/components/Seo';
 export default function HomePage() {
   const [value, setValue] = React.useState(50);
 
+  const handleScroll = () => {
+    setValue((window.scrollY / 1000) * 100);
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  });
+
   return (
     <Layout>
       {/* <Seo templateTitle='Home' /> */}
       <Seo />
 
-      <main className='bg-black'>
-        <section className='bg-black text-white'>
-          <div className='layout flex min-h-screen flex-col items-center justify-center text-center'>
+      <main className='no-scrollbar bg-black'>
+        <section className='no-scrollbar bg-black text-white'>
+          <div className='no-scrollbar layout flex min-h-screen flex-col items-center justify-center text-center'>
             {/* <Vercel className='text-5xl' /> */}
             {/* <h1 className='mt-4 text-white'>
               Next.js + Tailwind CSS + TypeScript Starter
             </h1> */}
-            <div className='flex w-full flex-col space-y-3'>
+            <div className='no-scrollbar flex h-[1000px] w-full justify-center space-y-3'>
               {/* <button className='flex-1 rounded-lg border-2 border-white py-4 text-xl'>
                 Test Button 1
               </button>
@@ -45,18 +57,18 @@ export default function HomePage() {
                 Test Button 3
               </button> */}
 
-              <label
+              {/* <label
                 htmlFor='default-range'
                 className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
               >
                 Default range
-              </label>
+              </label> */}
               <input
                 id='default-range'
                 type='range'
                 value={value}
                 onChange={(e) => setValue(parseInt(e.target.value))}
-                className='h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
+                className='fixed top-[50%] h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
               />
             </div>
             {/* <p className='mt-2 text-sm text-gray-800'>
