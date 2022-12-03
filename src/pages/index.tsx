@@ -29,7 +29,7 @@ export default function HomePage() {
   React.useEffect(() => {
     const handleScroll = () => {
       // setScrollY(window.scrollY);
-      setValue((window.scrollY / (1000 - window?.innerHeight)) * 100);
+      setValue((window.scrollY / (2000 - window?.innerHeight)) * 100);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -51,9 +51,9 @@ export default function HomePage() {
       {/* <Seo templateTitle='Home' /> */}
       <Seo />
 
-      <main className='no-scrollbar bg-black'>
-        <section className='no-scrollbar bg-black text-white'>
-          <div className='no-scrollbar layout flex min-h-[2000px] flex-col items-center justify-center text-center'>
+      <main>
+        <section className='bg-black text-white'>
+          <div className='layout h-[2000px]'>
             {/* <Vercel className='text-5xl' /> */}
             {/* <h1 className='mt-4 text-white'>
               Next.js + Tailwind CSS + TypeScript Starter
