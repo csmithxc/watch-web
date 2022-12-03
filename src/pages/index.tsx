@@ -21,21 +21,30 @@ import Seo from '@/components/Seo';
 
 export default function HomePage() {
   const [value, setValue] = React.useState(50);
-  // const [scrollY, setScrollY] = React.useState(0);
-  // console.log(window.innerHeight)
-
-  const handleScroll = () => {
-    // setScrollY(window.scrollY);
-    setValue((window.scrollY / (1000 - window?.innerHeight)) * 100);
-  };
+  const [innerDimensions, setInnerDimensions] = React.useState({
+    height: 0,
+    width: 0,
+  });
 
   React.useEffect(() => {
+    const handleScroll = () => {
+      // setScrollY(window.scrollY);
+      setValue((window.scrollY / (1000 - window?.innerHeight)) * 100);
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  });
+  }, []);
+
+  React.useEffect(() => {
+    setInnerDimensions({
+      height: window.innerHeight,
+      width: window.innerWidth,
+    });
+  }, []);
 
   return (
     <Layout>
@@ -67,7 +76,7 @@ export default function HomePage() {
                 Default range
               </label> */}
               <div className='mt-10'>
-                {window?.innerHeight} | {window?.innerWidth}
+                {innerDimensions.height} | {innerDimensions.width}
               </div>
               <input
                 id='default-range'
