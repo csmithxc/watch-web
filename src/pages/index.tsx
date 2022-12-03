@@ -22,10 +22,11 @@ import Seo from '@/components/Seo';
 export default function HomePage() {
   const [value, setValue] = React.useState(50);
   // const [scrollY, setScrollY] = React.useState(0);
+  // console.log(window.innerHeight)
 
   const handleScroll = () => {
     // setScrollY(window.scrollY);
-    setValue((window.scrollY / (1000 - 180)) * 100);
+    setValue((window.scrollY / (1000 - window.innerHeight)) * 100);
   };
 
   React.useEffect(() => {
@@ -65,12 +66,15 @@ export default function HomePage() {
               >
                 Default range
               </label> */}
+              <div className='mt-10'>
+                {window.innerHeight} | {window.innerWidth}
+              </div>
               <input
                 id='default-range'
                 type='range'
                 value={value}
                 onChange={(e) => setValue(parseInt(e.target.value))}
-                className='fixed top-[50%] h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
+                className='fixed top-[25%] h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
                 // style={{
                 //   marginTop: scrollY + 100 + 'px',
                 // }}
