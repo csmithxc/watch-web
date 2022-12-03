@@ -29,14 +29,17 @@ export default function HomePage() {
 
   React.useEffect(() => {
     const handleScroll = () => {
+      // e.preventDefault();
       // setScrollY(window.scrollY);
       setValue((window.scrollY / (2000 - window?.innerHeight)) * 100);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-
+    // window.addEventListener('DOMMouseScroll', handleScroll, false); // older FF
+    // window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+    // window.addEventListener('touchmove', handleScroll, wheelOpt); // mobile
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('DOMMouseScroll', handleScroll);
     };
   }, []);
 
@@ -79,43 +82,19 @@ export default function HomePage() {
             <div className='mt-10'>
               {innerDimensions.height} | {innerDimensions.width}
             </div>
-            <input
-              id='default-range'
-              type='range'
-              value={value}
-              onChange={(e) => setValue(parseInt(e.target.value))}
-              className='sticky top-[100px] h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
-              // style={{
-              //   marginTop: scrollY + 'px',
-              // }}
-            />
+            <div className='fixed'>
+              <input
+                id='default-range'
+                type='range'
+                value={value}
+                onChange={(e) => setValue(parseInt(e.target.value))}
+                className='h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
+                // style={{
+                //   marginTop: scrollY + 'px',
+                // }}
+              />
+            </div>
           </div>
-          {/* <p className='mt-2 text-sm text-gray-800'>
-              A starter for Next.js, Tailwind CSS, and TypeScript with Absolute
-              Import, Seo, Link component, pre-configured with Husky{' '}
-            </p>
-            <p className='mt-2 text-sm text-gray-700'>
-              <ArrowLink href='https://github.com/theodorusclarence/ts-nextjs-tailwind-starter'>
-                See the repository
-              </ArrowLink>
-            </p>
-
-            <ButtonLink className='mt-6' href='/components' variant='light'>
-              See all components
-            </ButtonLink> */}
-
-          {/* <UnstyledLink
-              href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Ftheodorusclarence%2Fts-nextjs-tailwind-starter'
-              className='mt-4'
-            > */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          {/* <img
-                width='92'
-                height='32'
-                src='https://vercel.com/button'
-                alt='Deploy with Vercel'
-              /> */}
-          {/* </UnstyledLink> */}
 
           {/* <footer className='absolute bottom-2 text-gray-700'>
               © {new Date().getFullYear()} By{' '}
