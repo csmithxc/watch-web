@@ -53,13 +53,12 @@ export default function HomePage() {
 
       <main className='no-scrollbar bg-black'>
         <section className='no-scrollbar bg-black text-white'>
-          <div className='no-scrollbar layout flex min-h-[286px] flex-col items-center justify-center text-center'>
+          <div className='no-scrollbar layout flex min-h-[2000px] flex-col items-center justify-center text-center'>
             {/* <Vercel className='text-5xl' /> */}
             {/* <h1 className='mt-4 text-white'>
               Next.js + Tailwind CSS + TypeScript Starter
             </h1> */}
-            <div className='no-scrollbar flex h-[1000px] w-full justify-center space-y-3'>
-              {/* <button className='flex-1 rounded-lg border-2 border-white py-4 text-xl'>
+            {/* <button className='flex-1 rounded-lg border-2 border-white py-4 text-xl'>
                 Test Button 1
               </button>
               <button className='flex-1 rounded-lg border-2 border-white py-4 text-xl'>
@@ -69,26 +68,25 @@ export default function HomePage() {
                 Test Button 3
               </button> */}
 
-              {/* <label
+            {/* <label
                 htmlFor='default-range'
                 className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
               >
                 Default range
               </label> */}
-              <div className='mt-10'>
-                {innerDimensions.height} | {innerDimensions.width}
-              </div>
-              <input
-                id='default-range'
-                type='range'
-                value={value}
-                onChange={(e) => setValue(parseInt(e.target.value))}
-                className='fixed top-[25%] h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
-                // style={{
-                //   marginTop: scrollY + 100 + 'px',
-                // }}
-              />
+            <div className='mt-10'>
+              {innerDimensions.height} | {innerDimensions.width}
             </div>
+            <input
+              id='default-range'
+              type='range'
+              value={value}
+              onChange={(e) => setValue(parseInt(e.target.value))}
+              className='fixed top-[25%] h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
+              // style={{
+              //   marginTop: scrollY + 100 + 'px',
+              // }}
+            />
             {/* <p className='mt-2 text-sm text-gray-800'>
               A starter for Next.js, Tailwind CSS, and TypeScript with Absolute
               Import, Seo, Link component, pre-configured with Husky{' '}
