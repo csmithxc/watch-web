@@ -26,7 +26,7 @@ export default function HomePage() {
 
   const handleScroll = () => {
     // setScrollY(window.scrollY);
-    setValue((window.scrollY / (1000 - window.innerHeight)) * 100);
+    setValue((window.scrollY / (1000 - window?.innerHeight)) * 100);
   };
 
   React.useEffect(() => {
@@ -67,7 +67,7 @@ export default function HomePage() {
                 Default range
               </label> */}
               <div className='mt-10'>
-                {window.innerHeight} | {window.innerWidth}
+                {window?.innerHeight} | {window?.innerWidth}
               </div>
               <input
                 id='default-range'
