@@ -21,10 +21,10 @@ import Seo from '@/components/Seo';
 
 export default function HomePage() {
   const [value, setValue] = React.useState(50);
-  const [scrollY, setScrollY] = React.useState(0);
+  // const [scrollY, setScrollY] = React.useState(0);
 
   const handleScroll = () => {
-    setScrollY(window.scrollY);
+    // setScrollY(window.scrollY);
     setValue((window.scrollY / 1000) * 100);
   };
 
@@ -70,10 +70,10 @@ export default function HomePage() {
                 type='range'
                 value={value}
                 onChange={(e) => setValue(parseInt(e.target.value))}
-                className='h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
-                style={{
-                  marginTop: scrollY + 100 + 'px',
-                }}
+                className='fixed top-[50%] h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
+                // style={{
+                //   marginTop: scrollY + 100 + 'px',
+                // }}
               />
             </div>
             {/* <p className='mt-2 text-sm text-gray-800'>
