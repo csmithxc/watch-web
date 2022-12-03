@@ -82,7 +82,7 @@ export default function HomePage() {
             <div className='mt-10'>
               {innerDimensions.height} | {innerDimensions.width}
             </div>
-            <div className='fixed top-20 left-0 right-0 bottom-0'>
+            <div className='fixed top-44 left-0 right-0 bottom-0'>
               <input
                 id='default-range'
                 type='range'
