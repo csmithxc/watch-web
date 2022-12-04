@@ -20,11 +20,11 @@ import Seo from '@/components/Seo';
 // to customize the default configuration.
 
 export default function HomePage() {
-  const [value, setValue] = React.useState(50);
-  const [innerDimensions, setInnerDimensions] = React.useState({
-    height: 0,
-    width: 0,
-  });
+  // const [value, setValue] = React.useState(50);
+  // const [innerDimensions, setInnerDimensions] = React.useState({
+  //   height: 0,
+  //   width: 0,
+  // });
   // const [scrollY, setScrollY] = React.useState(0);
 
   React.useEffect(() => {
@@ -32,7 +32,7 @@ export default function HomePage() {
       // console.log(e)
       // e.preventDefault();
       // setScrollY(window.scrollY);
-      setValue((window.scrollY / (2000 - window?.innerHeight)) * 100);
+      // setValue((window.scrollY / (2000 - window?.innerHeight)) * 100);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -45,10 +45,10 @@ export default function HomePage() {
   }, []);
 
   React.useEffect(() => {
-    setInnerDimensions({
-      height: window.innerHeight,
-      width: window.innerWidth,
-    });
+    // setInnerDimensions({
+    //   height: window.innerHeight,
+    //   width: window.innerWidth,
+    // });
   }, []);
 
   return (
@@ -57,6 +57,12 @@ export default function HomePage() {
       <Seo />
 
       <main>
+        <div className='h-full w-full text-white'>
+          <div className='w-[500px]'>
+            <div className='absolute top-10 left-10'>{'->'}</div>
+            <div className='absolute top-10 right-10'>{'<-'}</div>
+          </div>
+        </div>
         {/* <div className=''> */}
         {/* <Vercel className='text-5xl' /> */}
         {/* <h1 className='mt-4 text-white'>
@@ -78,7 +84,7 @@ export default function HomePage() {
               >
                 Default range
               </label> */}
-        <div className='z-1 inert h-[2000px]'>
+        {/* <div className='z-1 inert h-[2000px]'>
           {innerDimensions.height} | {innerDimensions.width}
         </div>
         <div className='fixed inset-0 z-10 flex'>
@@ -99,7 +105,7 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         {/* <div
               className='fixed top-0 left-0 right-0'
               style={{ bottom: '280px' }}
