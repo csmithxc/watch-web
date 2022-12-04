@@ -58,7 +58,7 @@ export default function HomePage() {
 
       <main>
         <section className='bg-black text-white'>
-          <div className='layout h-[2000px]'>
+          <div className='layout top-10 h-[2000px]'>
             {/* <div className=''> */}
             {/* <Vercel className='text-5xl' /> */}
             {/* <h1 className='mt-4 text-white'>
@@ -85,11 +85,25 @@ export default function HomePage() {
             </div>
             <div
               className='fixed bottom-0 left-0 right-0'
-              // style={{ top: '280px' }}
-              style={{ transformOrigin: '0%' }}
+              style={{ top: '280px' }}
             >
               <input
                 id='default-range'
+                type='range'
+                value={value}
+                onChange={(e) => setValue(parseInt(e.target.value))}
+                className='h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
+                // style={{
+                //   marginTop: scrollY + 'px',
+                // }}
+              />
+            </div>
+            <div
+              className='fixed top-0 left-0 right-0'
+              style={{ bottom: '280px' }}
+            >
+              <input
+                id='default-range-2'
                 type='range'
                 value={value}
                 onChange={(e) => setValue(parseInt(e.target.value))}
