@@ -25,13 +25,13 @@ export default function HomePage() {
     height: 0,
     width: 0,
   });
-  const [scrollY, setScrollY] = React.useState(0);
+  // const [scrollY, setScrollY] = React.useState(0);
 
   React.useEffect(() => {
     const handleScroll = () => {
       // console.log(e)
       // e.preventDefault();
-      setScrollY(window.scrollY);
+      // setScrollY(window.scrollY);
       setValue((window.scrollY / (2000 - window?.innerHeight)) * 100);
     };
 
@@ -58,7 +58,7 @@ export default function HomePage() {
 
       <main>
         <section className='bg-black text-white'>
-          <div className='layout top-10 h-[2000px]'>
+          <div className='layout'>
             {/* <div className=''> */}
             {/* <Vercel className='text-5xl' /> */}
             {/* <h1 className='mt-4 text-white'>
@@ -80,19 +80,16 @@ export default function HomePage() {
               >
                 Default range
               </label> */}
-            <div className='mt-9'>
+            <div className='z-1 h-[2000px]'>
               {innerDimensions.height} | {innerDimensions.width}
             </div>
-            <div
-              className='fixed bottom-0 left-0 right-0'
-              style={{ top: 280 + scrollY + 'px' }}
-            >
+            <div className='fixed top-0 bottom-0 left-0 right-0 z-10 flex h-[200px]'>
               <input
                 id='default-range'
                 type='range'
                 value={value}
                 onChange={(e) => setValue(parseInt(e.target.value))}
-                className='h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
+                className='mt-20 h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
                 // style={{
                 //   marginTop: scrollY + 'px',
                 // }}
