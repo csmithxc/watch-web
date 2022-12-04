@@ -57,14 +57,12 @@ export default function HomePage() {
       <Seo />
 
       <main>
-        <section className='bg-black text-white'>
-          <div className='layout'>
-            {/* <div className=''> */}
-            {/* <Vercel className='text-5xl' /> */}
-            {/* <h1 className='mt-4 text-white'>
+        {/* <div className=''> */}
+        {/* <Vercel className='text-5xl' /> */}
+        {/* <h1 className='mt-4 text-white'>
               Next.js + Tailwind CSS + TypeScript Starter
             </h1> */}
-            {/* <button className='flex-1 rounded-lg border-2 border-white py-4 text-xl'>
+        {/* <button className='flex-1 rounded-lg border-2 border-white py-4 text-xl'>
                 Test Button 1
               </button>
               <button className='flex-1 rounded-lg border-2 border-white py-4 text-xl'>
@@ -74,34 +72,35 @@ export default function HomePage() {
                 Test Button 3
               </button> */}
 
-            {/* <label
+        {/* <label
                 htmlFor='default-range'
                 className='mb-2 block text-sm font-medium text-gray-900 dark:text-white'
               >
                 Default range
               </label> */}
-            <div className='z-1 h-[2000px]'>
-              {innerDimensions.height} | {innerDimensions.width}
-            </div>
-            <div className='fixed inset-0 z-10 flex h-[200px]'>
-              <div className='absolute inset-0 overflow-hidden'>
-                <div className='fixed inset-y-0 right-0 flex max-w-full'>
-                  <div className='relative w-screen translate-x-0'>
-                    <input
-                      id='default-range'
-                      type='range'
-                      value={value}
-                      onChange={(e) => setValue(parseInt(e.target.value))}
-                      className='mt-40 h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
-                      // style={{
-                      //   marginTop: scrollY + 'px',
-                      // }}
-                    />
-                  </div>
-                </div>
+        <div className='z-1 inert h-[2000px]'>
+          {innerDimensions.height} | {innerDimensions.width}
+        </div>
+        <div className='fixed inset-0 z-10 flex'>
+          <div className='absolute inset-0 overflow-hidden'>
+            <div className='fixed inset-y-0 right-0 flex max-w-full'>
+              <div className='relative w-screen max-w-[100px] translate-x-0'>
+                <div className='h-[200px]' />
+                <input
+                  id='default-range'
+                  type='range'
+                  value={value}
+                  onChange={(e) => setValue(parseInt(e.target.value))}
+                  className='h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
+                  // style={{
+                  //   marginTop: scrollY + 'px',
+                  // }}
+                />
               </div>
             </div>
-            {/* <div
+          </div>
+        </div>
+        {/* <div
               className='fixed top-0 left-0 right-0'
               style={{ bottom: '280px' }}
             >
@@ -116,16 +115,14 @@ export default function HomePage() {
                 // }}
               />
             </div> */}
-          </div>
 
-          {/* <footer className='absolute bottom-2 text-gray-700'>
+        {/* <footer className='absolute bottom-2 text-gray-700'>
               © {new Date().getFullYear()} By{' '}
               <UnderlineLink href='https://theodorusclarence.com?ref=tsnextstarter'>
                 Theodorus Clarence
               </UnderlineLink>
             </footer> */}
-          {/* </div> */}
-        </section>
+        {/* </div> */}
       </main>
     </Layout>
   );
