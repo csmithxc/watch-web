@@ -83,17 +83,23 @@ export default function HomePage() {
             <div className='z-1 h-[2000px]'>
               {innerDimensions.height} | {innerDimensions.width}
             </div>
-            <div className='fixed top-0 bottom-0 left-0 right-0 z-10 flex h-[200px]'>
-              <input
-                id='default-range'
-                type='range'
-                value={value}
-                onChange={(e) => setValue(parseInt(e.target.value))}
-                className='mt-20 h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
-                // style={{
-                //   marginTop: scrollY + 'px',
-                // }}
-              />
+            <div className='fixed inset-0 z-10 flex h-[200px]'>
+              <div className='absolute inset-0 overflow-hidden'>
+                <div className='fixed inset-y-0 right-0 flex max-w-full'>
+                  <div className='relative w-screen translate-x-0'>
+                    <input
+                      id='default-range'
+                      type='range'
+                      value={value}
+                      onChange={(e) => setValue(parseInt(e.target.value))}
+                      className='mt-40 h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700'
+                      // style={{
+                      //   marginTop: scrollY + 'px',
+                      // }}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
             {/* <div
               className='fixed top-0 left-0 right-0'
