@@ -25,13 +25,13 @@ export default function HomePage() {
     height: 0,
     width: 0,
   });
-  // const [scrollY, setScrollY] = React.useState(0);
+  const [scrollY, setScrollY] = React.useState(0);
 
   React.useEffect(() => {
     const handleScroll = () => {
       // console.log(e)
       // e.preventDefault();
-      // setScrollY(window.scrollY);
+      setScrollY(window.scrollY);
       setValue((window.scrollY / (2000 - window?.innerHeight)) * 100);
     };
 
@@ -85,7 +85,7 @@ export default function HomePage() {
             </div>
             <div
               className='fixed bottom-0 left-0 right-0'
-              style={{ top: '280px' }}
+              style={{ top: 280 + scrollY + 'px' }}
             >
               <input
                 id='default-range'
@@ -98,7 +98,7 @@ export default function HomePage() {
                 // }}
               />
             </div>
-            <div
+            {/* <div
               className='fixed top-0 left-0 right-0'
               style={{ bottom: '280px' }}
             >
@@ -112,7 +112,7 @@ export default function HomePage() {
                 //   marginTop: scrollY + 'px',
                 // }}
               />
-            </div>
+            </div> */}
           </div>
 
           {/* <footer className='absolute bottom-2 text-gray-700'>
