@@ -79,7 +79,7 @@ export default function HomePage() {
               >
                 Default range
               </label> */}
-            <div className='mt-10'>
+            <div className='mt-9'>
               {innerDimensions.height} | {innerDimensions.width}
             </div>
             <div
