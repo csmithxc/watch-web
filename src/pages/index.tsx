@@ -29,6 +29,7 @@ export default function HomePage() {
 
   React.useEffect(() => {
     const handleScroll = () => {
+      // console.log(e)
       // e.preventDefault();
       // setScrollY(window.scrollY);
       setValue((window.scrollY / (2000 - window?.innerHeight)) * 100);
@@ -83,8 +84,9 @@ export default function HomePage() {
               {innerDimensions.height} | {innerDimensions.width}
             </div>
             <div
-              className='fixed left-0 right-0 bottom-0'
-              style={{ top: '280px' }}
+              className='fixed bottom-0 left-0 right-0'
+              // style={{ top: '280px' }}
+              style={{ transformOrigin: '0%' }}
             >
               <input
                 id='default-range'
